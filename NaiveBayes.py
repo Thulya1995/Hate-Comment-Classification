@@ -29,7 +29,7 @@ print('Accuracy: ', accuracy_score(y_test.astype(str),predictions.astype(str))*1
 def classify_hate(arr):
   return model.predict(vectorizer.transform(arr))
 
-with request.urlopen('https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=bIEorYzoWW4&maxResults=200&key=AIzaSyBMSKGsgvnjBruFofjQzD_Ze5TWPHFBsR8') as response:
+with request.urlopen('YoutubeAPI') as response:
     source = response.read()
     data = json.loads(source)
     count = 0
